@@ -1,0 +1,10 @@
+/* navbar */
+.ml-auto {
+  margin-left: auto;
+}
+/* nav link */
+.nav-link .user {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 100%;
+}
