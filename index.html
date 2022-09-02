@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News pata</title>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/178ebc03bb.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap CSS only -->
     <link
       rel="stylesheet"
@@ -69,8 +74,9 @@
     <!-- Start main  -->
     <main>
       <!-- news catagories section -->
-      <section>
+      <section class="py-5">
         <div class="container">
+          <!-- news catagories -->
           <div class="news-catagories">
             <div class="catagories-items">
               <span class="p-2 fs-6 text-uppercase">Catagories 01</span>
@@ -83,11 +89,127 @@
               <span class="p-2 fs-6 text-uppercase">Catagories 01</span>
             </div>
           </div>
+
+          <!-- total news -->
+          <div class="total-news py-5">
+            <p>
+              <span>4</span> items found for category <span>Entertainment</span>
+            </p>
+          </div>
+
+          <!-- sort news -->
+          <div
+            class="sort-new d-flex justify-content-between align-item-center"
+          >
+            <!-- sort item -->
+            <div class="sort-item d-inline">
+              <span>Sort by view:</span>
+              <select class="form-select w-50 d-inline border-0">
+                <option selected>default</option>
+                <option value="1">New</option>
+                <option value="2">Old</option>
+              </select>
+            </div>
+            <!-- sort item -->
+            <div class="sort-item">
+              <button class="btn btn-primary">Today's Pick</button>
+              <button class="btn btn-outline-primary">Trending</button>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end of news catagories -->
+
+      <!-- News area -->
+      <section>
+        <div class="container">
+          <div class="new-area">
+            <div class="row">
+              <div class="col-lg-4">
+                <!-- new thumbnail -->
+                <!-- news thumbnail -->
+                <div class="new-thumbnail">
+                  <img
+                    src="./images/news.jpg"
+                    class="img-fluid rounded"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <!-- article -->
+              <div class="col-lg-8">
+                <article class="new-article">
+                  <h2>
+                    The best fashion influencers to follow for sartorial
+                    inspiration
+                  </h2>
+                  <p>
+                    From our favourite UK influencers to the best missives from
+                    Milan and the coolest New Yorkers, read on some of the best
+                    fashion blogs out there, and for even more inspiration, do
+                    head to our separate black fashion influencer round- up.
+                    Fancy some shopping deals? Check out these amazing sales:
+                    Zara Black Friday, ASOS Black Friday, Missoma Black Friday
+                    and Gucci Black Friday..
+                  </p>
+
+                  <!-- author and some details -->
+                  <div
+                    class="author-details d-sm-flex justify-content-between py-4 align-items-center"
+                  >
+                    <!-- author -->
+                    <div class="author d-flex align-items-center my-3">
+                      <!-- user -->
+                      <div class="user mx-2">
+                        <img
+                          src="./images/user.png"
+                          class="img-fluid"
+                          alt="author"
+                        />
+                      </div>
+                      <!-- user name -->
+                      <div class="author-name-date mx-2">
+                        <h5 class="fs-6 fw-bold p-0 m-0">Jane Cooper</h5>
+                        <p class="fs-6 fw-light p-0 m-0">jun 10, 2022</p>
+                      </div>
+                    </div>
+
+                    <!-- view -->
+                    <div class="views my-3">
+                      <i class="fa-regular fa-eye"></i>
+                      <span><strong>1.5M</strong></span>
+                    </div>
+
+                    <!-- rating -->
+                    <div class="rating my-3">
+                      <i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <!-- read more btn -->
+                    <button class="btn btn-primary my-3">
+                      More details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of news area -->
     </main>
     <!-- End of main  -->
+
+    <!-- Start footer -->
+    <footer class="text-center mt-5 mb-3">
+      <p class="my-2">Copyright 2022 News Portal</p>
+    </footer>
+    <!-- End of footer -->
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js

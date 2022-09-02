@@ -17,3 +17,10 @@
 .catagories-items span:hover {
   color: #0d6efd;
 }
+
+/* news area  styling */
+.author .user img {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 100%;
+}
