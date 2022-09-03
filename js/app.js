@@ -75,10 +75,7 @@ const newsSingleDataShow = (singleData) => {
   // single data length or total news check
   const dataLength = singleData.length;
 
-  // const defaultNewsMeg = document.getElementById("default-news-meg");
-  // let inner = defaultNewsMeg.innerText;
-  // console.log(inner);
-
+  // total news count
   const totalNewsFound = document.getElementById("total-news-found");
   if (dataLength === 0) {
     totalNewsFound.innerText = "News not found.";
