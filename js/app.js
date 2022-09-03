@@ -56,10 +56,11 @@ const loadingSpinner = (isLoading) => {
 const newsSingleDataShow = (singleData) => {
   // single data length or total news check
   const dataLength = singleData.length;
+  // const defaultNewsMeg = document.getElementById("default-news-meg");
+  // defaultNewsMeg.innerText = "";
   const totalNewsItems = document.getElementById("total-news-items");
   if (dataLength === 0) {
-    totalNewsItems.innerText = "";
-    totalNewsItems.innerText = "No news found.";
+    totalNewsItems.innerText = "News not found.";
   } else {
     totalNewsItems.innerText = "";
     totalNewsItems.innerText = dataLength;
@@ -127,7 +128,9 @@ const newsSingleDataShow = (singleData) => {
         <!-- view -->
         <div class="views my-3">
           <i class="fa-regular fa-eye"></i>
-          <span><strong>${news.rating.number}</strong></span>
+          <span><strong>${
+            news.rating.number ? news.rating.number : "No data avilable"
+          }</strong></span>
         </div>
 
         <!-- rating -->
@@ -139,8 +142,13 @@ const newsSingleDataShow = (singleData) => {
           ><i class="fa-solid fa-star-half-stroke"></i>
         </div>
 
+
+        
+
         <!-- read more btn -->
-        <button class="btn btn-primary my-3">
+        <button class="btn btn-primary my-3" type="button"data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="newDetailsModal('${
+          news._id
+        }')">
           More details <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
@@ -155,7 +163,67 @@ const newsSingleDataShow = (singleData) => {
   loadingSpinner(false);
 };
 
+const newDetailsModal = async (code) => {
+  try {
+    const url = `https://openapi.programming-hero.com/api/news/${code}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    displayModalDetails(data.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const displayModalDetails = (displaySingleData) => {
+  // modal wrap
+  const modalWrap = document.getElementById("modal-dialog");
+  modalWrap.innerHTML = ``;
+  displaySingleData.map((data) => {
+    const createEle = document.createElement("div");
+    createEle.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLabel">
+          
+        <!-- author -->
+        <div class="author d-flex align-items-center my-3">
+          <!-- user -->
+          <div class="user mx-2">
+            <img
+              src="${data.author.img}"
+              class="img-fluid"
+              alt="author"
+            />
+          </div>
+          <!-- user name -->
+          <div class="author-name-date mx-2">
+            <h5 class="fs-6 fw-bold p-0 m-0">${
+              data.author.name ? data.author.name : "Author name not found"
+            }</h5>
+            <p class="fs-6 fw-light p-0 m-0">${data.author.published_date}</p>
+          </div>
+        </div>
+
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+      <img src="${data.image_url}" class="img-fluid"/>
+      <h5 class="py-3">${data.title}</h5>
+      <p>${data.details.slice(0, 250)}...</p>
+      </div>
+    </div>
+  `;
+    modalWrap.appendChild(createEle);
+  });
+};
+
 // default news
-getIdSingleNewsDetails();
+getIdSingleNewsDetails("01");
 // catagories Name function  calling
 catagoriesName();
