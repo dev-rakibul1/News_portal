@@ -83,9 +83,7 @@
 
           <!-- total news -->
           <div class="total-news py-5">
-            <p>
-              <span>4</span> items found for category <span>Entertainment</span>
-            </p>
+            <p><span id="total-news-items">4</span> News found</p>
           </div>
 
           <!-- sort news -->
@@ -114,85 +112,15 @@
       <!-- News area -->
       <section>
         <div class="container">
-          <div class="new-area">
-            <div class="row">
-              <div class="col-lg-4">
-                <!-- new thumbnail -->
-                <!-- news thumbnail -->
-                <div class="new-thumbnail">
-                  <img
-                    src="./images/news.jpg"
-                    class="img-fluid rounded"
-                    alt=""
-                  />
-                </div>
-              </div>
-
-              <!-- article -->
-              <div class="col-lg-8">
-                <article class="new-article">
-                  <h2>
-                    The best fashion influencers to follow for sartorial
-                    inspiration
-                  </h2>
-                  <p>
-                    From our favourite UK influencers to the best missives from
-                    Milan and the coolest New Yorkers, read on some of the best
-                    fashion blogs out there, and for even more inspiration, do
-                    head to our separate black fashion influencer round- up.
-                    Fancy some shopping deals? Check out these amazing sales:
-                    Zara Black Friday, ASOS Black Friday, Missoma Black Friday
-                    and Gucci Black Friday..
-                  </p>
-
-                  <!-- author and some details -->
-                  <div
-                    class="author-details d-sm-flex justify-content-between py-4 align-items-center"
-                  >
-                    <!-- author -->
-                    <div class="author d-flex align-items-center my-3">
-                      <!-- user -->
-                      <div class="user mx-2">
-                        <img
-                          src="./images/user.png"
-                          class="img-fluid"
-                          alt="author"
-                        />
-                      </div>
-                      <!-- user name -->
-                      <div class="author-name-date mx-2">
-                        <h5 class="fs-6 fw-bold p-0 m-0">Jane Cooper</h5>
-                        <p class="fs-6 fw-light p-0 m-0">jun 10, 2022</p>
-                      </div>
-                    </div>
-
-                    <!-- view -->
-                    <div class="views my-3">
-                      <i class="fa-regular fa-eye"></i>
-                      <span><strong>1.5M</strong></span>
-                    </div>
-
-                    <!-- rating -->
-                    <div class="rating my-3">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-                    <!-- read more btn -->
-                    <button class="btn btn-primary my-3">
-                      More details <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
+          <div class="new-area" id="allNewsArea"></div>
         </div>
       </section>
       <!-- End of news area -->
+
+      <!-- not found message -->
+      <section class="container py-5" id="not-found-meg" style="display: none">
+        <h1 class="text-center text-danger py-5">News not found</h1>
+      </section>
     </main>
     <!-- End of main  -->
 
