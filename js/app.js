@@ -30,6 +30,7 @@ const catagoriesDisplay = (catagoriesData) => {
   catagoriesData.forEach((catagories) => {
     // console.log(catagories);
     const catagoriesItems = document.createElement("div");
+    catagoriesItems.classList.add("active");
 
     catagoriesItems.innerHTML = `
     <span class="p-2 fs-6 text-uppercase d-inline" onclick="getIdSingleNewsDetails('${catagories.category_id}')">${catagories.category_name}</span>
@@ -37,6 +38,26 @@ const catagoriesDisplay = (catagoriesData) => {
     `;
     newCatagories.appendChild(catagoriesItems);
   });
+
+  // active catatories items
+  // const newCatagoriesChild = newCatagories.childNodes;
+  // console.log(newCatagoriesChild);
+
+  // newCatagoriesChild.forEach((items) => {
+  //   const activeColor = (isColor) => {
+  //     if (isColor) {
+  //       items.addEventListener("click", function onClick(event) {
+  //         event.target.style.color = "red";
+  //       });
+  //     } else {
+  //       items.addEventListener("click", function onClick(event) {
+  //         event.target.style.color = "green";
+  //       });
+  //     }
+  //   };
+  //   return activeColor(false);
+  // return activeColor(true);
+  // });
 };
 
 // catch catagories news id
