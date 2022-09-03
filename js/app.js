@@ -12,10 +12,17 @@ const catagoriesName = async () => {
 // catagories data
 const catagoriesDisplay = (catagoriesData) => {
   console.log(catagoriesData);
-  // sorting
-  // singleData.sort((property1, property2) => {
-  //   return property2.total_view - property1.total_view;
-  // });
+
+  // sorting catagories name
+  catagoriesData.sort(function (property1, property2) {
+    if (property1.category_name < property2.category_name) {
+      return -1;
+    }
+    if (property1.category_name > property2.category_name) {
+      return 1;
+    }
+    return 0;
+  });
 
   // news catagories
   const newCatagories = document.getElementById("news-catagories");
@@ -60,8 +67,6 @@ const loadingSpinner = (isLoading) => {
 
 // single news data showing
 const newsSingleDataShow = (singleData) => {
-  console.log(singleData);
-
   // sorting
   singleData.sort((property1, property2) => {
     return property2.total_view - property1.total_view;
