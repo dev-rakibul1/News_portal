@@ -74,14 +74,16 @@ const newsSingleDataShow = (singleData) => {
 
   // single data length or total news check
   const dataLength = singleData.length;
+
   // const defaultNewsMeg = document.getElementById("default-news-meg");
-  // defaultNewsMeg.innerText = "";
-  const totalNewsItems = document.getElementById("total-news-items");
+  // let inner = defaultNewsMeg.innerText;
+  // console.log(inner);
+
+  const totalNewsFound = document.getElementById("total-news-found");
   if (dataLength === 0) {
-    totalNewsItems.innerText = "News not found.";
+    totalNewsFound.innerText = "News not found.";
   } else {
-    totalNewsItems.innerText = "";
-    totalNewsItems.innerText = dataLength;
+    totalNewsFound.innerText = dataLength + " News found";
   }
 
   // not found message
@@ -159,9 +161,6 @@ const newsSingleDataShow = (singleData) => {
           ><i class="fa-solid fa-star"></i
           ><i class="fa-solid fa-star-half-stroke"></i>
         </div>
-
-
-        
 
         <!-- read more btn -->
         <button class="btn btn-primary my-3" type="button"data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="newDetailsModal('${
