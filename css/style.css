@@ -18,6 +18,16 @@
   color: #0d6efd;
 }
 
+div#news-catagories div {
+  display: inline-block;
+  max-width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+}
+div#news-catagories div:hover {
+  font-weight: bold;
+}
+
 /* news area  styling */
 .author .user img {
   max-width: 30px;
