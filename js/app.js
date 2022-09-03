@@ -11,6 +11,12 @@ const catagoriesName = async () => {
 
 // catagories data
 const catagoriesDisplay = (catagoriesData) => {
+  console.log(catagoriesData);
+  // sorting
+  // singleData.sort((property1, property2) => {
+  //   return property2.total_view - property1.total_view;
+  // });
+
   // news catagories
   const newCatagories = document.getElementById("news-catagories");
 
@@ -54,6 +60,13 @@ const loadingSpinner = (isLoading) => {
 
 // single news data showing
 const newsSingleDataShow = (singleData) => {
+  console.log(singleData);
+
+  // sorting
+  singleData.sort((property1, property2) => {
+    return property2.total_view - property1.total_view;
+  });
+
   // single data length or total news check
   const dataLength = singleData.length;
   // const defaultNewsMeg = document.getElementById("default-news-meg");
@@ -129,8 +142,8 @@ const newsSingleDataShow = (singleData) => {
         <div class="views my-3">
           <i class="fa-regular fa-eye"></i>
           <span><strong>${
-            news.rating.number ? news.rating.number : "No data avilable"
-          }</strong></span>
+            news.total_view ? news.total_view : "No data avilable"
+          }M</strong></span>
         </div>
 
         <!-- rating -->
